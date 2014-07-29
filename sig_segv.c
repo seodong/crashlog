@@ -39,6 +39,12 @@ typedef struct {
 
 #include "sig_segv.h"
 
+#include <android/log.h>
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "SnackSO_Call", __VA_ARGS__);
+
+extern char* gExternalStoragePath;
+extern char gAppVersion[];
+
 int property_get(const char *key, char *value, const char *default_value)
 {
 	int len;
@@ -67,7 +73,7 @@ void crashlog(const char *fmt, ...)
 		return;
 	}
 
-	snprintf(log_path, sizeof(log_path) - 1, "%s/crash", gExternalStoragePath);
+	snprintf(log_path, sizeof(log_path) - 1, "%s", gExternalStoragePath);
 
 	if (access(log_path, F_OK) != 0)
 		mkdir(log_path, 0777);
