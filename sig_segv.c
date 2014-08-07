@@ -40,7 +40,7 @@ typedef struct {
 #include "sig_segv.h"
 
 #include <android/log.h>
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "SnackSO_Call", __VA_ARGS__);
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "libcrashlog", __VA_ARGS__);
 
 extern char* gExternalStoragePath;
 extern char gAppVersion[];
