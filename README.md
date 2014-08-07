@@ -9,12 +9,11 @@ crashlog는 앱에 libcrashlog.so를 동적로딩하면, 앱에서 지정한 디
 
 Complie
 ========
-#cd example/android
-#make
+cd example/android
+make
 
 하면 
 ls ./bin/crashlog-release-unsigned.apk 
-
 apk 파일이 생성됩다.
 
 Test
@@ -24,7 +23,7 @@ Test
 
 cat {ExternalStorageDirectory}/crashlog/crash.txt
 
-*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+========
 Time : 2014-07-29 15:11:08 KST
 Build fingerprint: 'samsung/c1skt/c1skt:4.3/JSS15J/E210SKSUGND1:user/release-keys'
 pid: 31788, tid: 31788, name: xample.crashlog  >>> com.example.crashlog <<<
