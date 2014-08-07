@@ -1,5 +1,4 @@
-crashlog
-========
+#crashlog
 
 Android app crash logs to a file.
 
@@ -7,23 +6,26 @@ Android app crash logs to a file.
 기존 Android에서는 개발자 모드에서만 crash 로그를 기록합니다.
 crashlog는 앱에 libcrashlog.so를 동적로딩하면, 앱에서 지정한 디렉토리로 crash log를 파일로 생성합니다.
 
-Complie
-========
-cd example/android
-make
+##Complie
+```
+$cd example/android
+$make
+```
 
-하면 
+하면 컴파일을 합니다. 
+
+```
 ls ./bin/crashlog-release-unsigned.apk 
+```
+
 apk 파일이 생성됩다.
 
-Test
-========
+##Test
 
 앱에서 force crash 버튼을 누르면 {ExternalStorageDirectory}/crashlog/crash.txt 파일이 생성됩니다.
 
+```
 cat {ExternalStorageDirectory}/crashlog/crash.txt
-
-========
 Time : 2014-07-29 15:11:08 KST
 Build fingerprint: 'samsung/c1skt/c1skt:4.3/JSS15J/E210SKSUGND1:user/release-keys'
 pid: 31788, tid: 31788, name: xample.crashlog  >>> com.example.crashlog <<<
@@ -121,3 +123,4 @@ stack:
          bef70524  57bb76b8  /dev/ashmem/dalvik-LinearAlloc (deleted)
          bef70528  428b0d24  /dev/ashmem/dalvik-heap (deleted)
          bef7052c  40b49e84  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+```
