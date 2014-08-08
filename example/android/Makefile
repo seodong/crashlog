@@ -1,4 +1,4 @@
-all:
+all: update
 	ndk-build V=1
 	ant  -Dapp_manifest=AndroidManifest.xml release
 
@@ -8,5 +8,5 @@ clean:
 	rm -rf bin
 
 update:
-	android update project --path ./ --name snackphone --target android-15 
+	android update project --path ./ --name crashlog --target android-15 
 
