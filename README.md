@@ -22,6 +22,13 @@ ls ./bin/crashlog-release-unsigned.apk
 
 apk 파일이 생성됩다.
 
+#디렉토리및 앱 버전정보 수정
+```
+vi example/android/src/com/example/crashlog/CrashlogExampleActivity.java
+	sJni.setLogPath(path); 			// log path 결정 
+	sJni.setAppVersion(APP_VERSION); 	// 앱 버전 결정 
+```
+
 ##Test
 
 앱에서 force crash 버튼을 누르면 {ExternalStorageDirectory}/crashlog/crash.txt 파일이 생성됩니다.
