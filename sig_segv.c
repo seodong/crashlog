@@ -23,15 +23,6 @@
 #include "backtrace/backtrace.h"
 #include "backtrace/symbol_table.h"
 
-/* Machine context at the time a signal was raised. */
-typedef struct ucontext {
-	uint32_t uc_flags;
-	struct ucontext *uc_link;
-	stack_t uc_stack;
-	struct sigcontext uc_mcontext;
-	uint32_t uc_sigmask;
-} ucontext_t;
-
 /* Unwind state. */
 typedef struct {
 	uint32_t gregs[16];
