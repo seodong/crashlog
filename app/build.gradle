@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+Properties properties = new Properties()
+	properties.load(project.rootProject.file('local.properties').newDataInputStream())
+	def NDKBUILD = properties.getProperty('NDKBUILD')
+
 android {
     compileSdkVersion 15
     buildToolsVersion "21.1.1"
@@ -21,7 +25,7 @@ android {
 
     task buildNative(type: Exec, description: 'Compile JNI source via NDK') {
         def ndkDir = project.plugins.findPlugin('com.android.application').getNdkFolder()
-        commandLine "$ndkDir/ndk-build.cmd",
+        commandLine "$ndkDir/$NDKBUILD", 
                 '-C', file('src/main/jni').absolutePath,
                 '-j', Runtime.runtime.availableProcessors(),
                 'all',
@@ -30,7 +34,7 @@ android {
 
     task cleanNative(type: Exec, description: 'Clean JNI object files') {
         def ndkDir = project.plugins.findPlugin('com.android.application').getNdkFolder()
-        commandLine "$ndkDir/ndk-build.cmd",
+        commandLine "$ndkDir/$NDKBUILD",
                 '-C', file('src/main/jni').absolutePath,
                 'clean'
     }

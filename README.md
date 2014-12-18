@@ -8,16 +8,22 @@ crashlog는 앱에 libcrashlog.so를 동적로딩하면, 앱에서 지정한 디
 
 ![ViewPagerIndicator Sample Screenshots][1]
 
+##edit
+$vi local.properties
+sdk.dir=/Users/Development/Android/sdk
+ndk.dir=/Users/Development/ndk 
+NDKBUILD=ndk-build or ndk-build.cmd
+
 ##Complie
 ```
-$cd example/android
-$make
+$make or  ./gradlew assemble 
 ```
 
 하면 컴파일을 합니다. 
 
 ```
-ls ./bin/crashlog-release-unsigned.apk 
+ls app/build/outputs/apk/
+app-debug.apk  app-debug-unaligned.apk  app-release-unsigned.apk  manifest-merger-debug-report.txt  manifest-merger-release-report.txt
 ```
 
 apk 파일이 생성됩다.

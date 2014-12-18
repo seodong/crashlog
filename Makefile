@@ -1,3 +1,6 @@
-all clean:
-	make -C example/android $@
+all :
+	./gradlew assemble
+
+clean:
+	./gradlew clean
 
