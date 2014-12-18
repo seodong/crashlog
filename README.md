@@ -11,9 +11,9 @@ crashlog는 앱에 libcrashlog.so를 동적로딩하면, 앱에서 지정한 디
 ##edit
 $vi local.properties
 ```
-sdk.dir=/Users/Development/Android/sdk
-ndk.dir=/Users/Development/ndk 
-NDKBUILD=ndk-build or ndk-build.cmd
+sdk.dir=<your sdk path>
+ndk.dir=<your ndk path>
+NDKBUILD=ndk-build (linux, mac) or ndk-build.cmd (windows)
 ```
 
 ##Complie
